@@ -1,5 +1,5 @@
-Summary:	Lincity is a Next Generation city/country simulation
-Summary(pl):	Lincity jest symulatorem miasta/kraju Nastêpnej Generacji
+Summary:	Lincity - a Next Generation city/country simulation
+Summary(pl):	Lincity - symulator miasta/kraju Nastêpnej Generacji
 Name:		lincity-ng
 Version:	0.9
 %define	_rel	rc1
@@ -9,17 +9,17 @@ Group:		Applications/Games
 Source0:	http://download.berlios.de/lincity-ng/lincity-ng-0.9rc1.tar.bz2
 # Source0-md5:	e55e0324f872b7a0265ec0814c5d3404
 URL:		http://lincity-ng.berlios.de/
-BuildRequires:	SDL >= 1.2.5
-BuildRequires:	SDL_mixer >= 1.2.4
-BuildRequires:	SDL_image >= 1.2.3
-BuildRequires:  SDL_gfx
-BuildRequires:	SDL_ttf >= 2.0
-BuildRequires:	physfs >= 1.0.0
+BuildRequires:	SDL-devel >= 1.2.5
+BuildRequires:	SDL_mixer-devel >= 1.2.4
+BuildRequires:	SDL_image-devel >= 1.2.3
+BuildRequires:	SDL_gfx-devel
+BuildRequires:	SDL_ttf-devel >= 2.0
+BuildRequires:	physfs-devel >= 1.0.0
 BuildRequires:	gettext-devel
 BuildRequires:	jam >= 2.5
 BuildRequires:	libtool
-BuildRequires:	libxml2 >= 2.6.11
-BuildRequires:	zlib >= 1.0
+BuildRequires:	libxml2-devel >= 2.6.11
+BuildRequires:	zlib-devel >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -61,14 +61,14 @@ rm -rf $RPM_BUILD_ROOT
 %doc README* TODO
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
-%{_datadir}/doc/%{name}-%{version}%{_rel}/*
 %{_datadir}/%{name}/*.pal
 %{_datadir}/%{name}/*.xml
-%{_datadir}/%{name}/fonts/*
-%{_datadir}/%{name}/images/*
-%{_datadir}/%{name}/gui/*
-%{_datadir}/%{name}/sounds/*
-%{_datadir}/%{name}/music/*
-%{_datadir}/%{name}/opening/*
+%{_datadir}/%{name}/fonts
+%{_datadir}/%{name}/images
+%{_datadir}/%{name}/gui
+%{_datadir}/%{name}/sounds
+%{_datadir}/%{name}/music
+%{_datadir}/%{name}/opening
+%{_docdir}/%{name}-%{version}%{_rel}
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
