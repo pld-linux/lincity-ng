@@ -12,6 +12,7 @@ URL:		http://lincity-ng.berlios.de/
 BuildRequires:	SDL >= 1.2.5
 BuildRequires:	SDL_mixer >= 1.2.4
 BuildRequires:	SDL_image >= 1.2.3
+BuildRequires:  SDL_gfx
 BuildRequires:	SDL_ttf >= 2.0
 BuildRequires:	physfs >= 1.0.0
 BuildRequires:	gettext-devel
