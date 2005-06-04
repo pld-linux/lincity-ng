@@ -20,26 +20,29 @@ BuildRequires:	jam >= 2.5
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.11
 BuildRequires:	zlib-devel >= 1.0
+Requires:	SDL >= 1.2.5
+Requires:	SDL_mixer >= 1.2.4
+Requires:	SDL_image >= 1.2.3
+Requires:	SDL_gfx
+Requires:	SDL_ttf >= 2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-X11 and SVGALib strategy game. You are required to build and maintain
-a city. You must feed, house, provide jobs and goods for your
-residents. You can build a sustainable economy with the help of
-renewable energy and recycling, or you can go for broke and build
-rockets to escape from a pollution ridden and resource starved planet,
-it's up to you. Due to the finite resources available in any one
-place, this is not a game that you can leave for long periods of time.
-This package contains shared files for X11 and SVGALib.
+You are required to build and maintain a city. You must feed, house,
+provide jobs and goods for your residents. You can build a sustainable
+economy with the help of renewable energy and recycling, or you can go
+for broke and build rockets to escape from a pollution ridden and
+resource starved planet, it's up to you. Due to the finite resources
+available in any one place, this is not a game that you can leave for
+long periods of time.
 
 %description -l pl
-Gra strategiczna dla X11 oraz SVGALib. Trzeba wybudowaæ miasto i nim
-zarz±dzaæ. Trzeba karmiæ mieszkañców, zapewniæ im mieszkanie, pracê i
-inne dobra. Mo¿na stworzyæ solidn± gospodarkê korzystaj±c z odnawialnych 
-¼róde³ energii i przetwórstwa odpadów. Mo¿na te¿ wielkim wysi³kiem 
-zbudowaæ rakiety, aby uciec z zanieczyszczonej, pozbawionej zasobów 
-planety. Ca³e ¿ycie miasta znajduje siê w rêkach gracza. Ten pakiet 
-zawiera pliki wspólne dla wersji X11 oraz SVGALib.
+Trzeba wybudowaæ miasto i nim zarz±dzaæ. Trzeba karmiæ mieszkañców,
+zapewniæ im mieszkanie, pracê i inne dobra. Mo¿na stworzyæ solidn±
+gospodarkê korzystaj±c z odnawialnych ¼róde³ energii i przetwórstwa
+odpadów. Mo¿na te¿ wielkim wysi³kiem zbudowaæ rakiety, aby uciec z
+zanieczyszczonej, pozbawionej zasobów planety. Ca³e ¿ycie miasta
+znajduje siê w rêkach gracza.
 
 %prep
 %setup -q -n %{name}-%{version}%{_rel}
@@ -70,5 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/music
 %{_datadir}/%{name}/opening
 %{_docdir}/%{name}-%{version}%{_rel}
+%lang(de) %{_datadir}/%{name}/help/de/*
+%lang(en) %{_datadir}/%{name}/help/en/*
+%lang(nl) %{_datadir}/%{name}/help/nl/*
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
