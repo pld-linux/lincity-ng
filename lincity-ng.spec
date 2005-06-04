@@ -10,9 +10,9 @@ Source0:	http://download.berlios.de/lincity-ng/lincity-ng-0.9rc1.tar.bz2
 # Source0-md5:	e55e0324f872b7a0265ec0814c5d3404
 URL:		http://lincity-ng.berlios.de/
 BuildRequires:	SDL-devel >= 1.2.5
-BuildRequires:	SDL_mixer-devel >= 1.2.4
-BuildRequires:	SDL_image-devel >= 1.2.3
 BuildRequires:	SDL_gfx-devel
+BuildRequires:	SDL_image-devel >= 1.2.3
+BuildRequires:	SDL_mixer-devel >= 1.2.4
 BuildRequires:	SDL_ttf-devel >= 2.0
 BuildRequires:	physfs-devel >= 1.0.0
 BuildRequires:	gettext-devel
@@ -21,9 +21,8 @@ BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.11
 BuildRequires:	zlib-devel >= 1.0
 Requires:	SDL >= 1.2.5
-Requires:	SDL_mixer >= 1.2.4
 Requires:	SDL_image >= 1.2.3
-Requires:	SDL_gfx
+Requires:	SDL_mixer >= 1.2.4
 Requires:	SDL_ttf >= 2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -72,9 +71,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/sounds
 %{_datadir}/%{name}/music
 %{_datadir}/%{name}/opening
+%dir %{_datadir}/%{name}/help
+%lang(de) %{_datadir}/%{name}/help/de
+%lang(en) %{_datadir}/%{name}/help/en
+%lang(nl) %{_datadir}/%{name}/help/nl
 %{_docdir}/%{name}-%{version}%{_rel}
-%lang(de) %{_datadir}/%{name}/help/de/*
-%lang(en) %{_datadir}/%{name}/help/en/*
-%lang(nl) %{_datadir}/%{name}/help/nl/*
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
