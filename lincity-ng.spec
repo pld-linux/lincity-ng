@@ -1,14 +1,13 @@
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl):	Lincity - symulator miasta/kraju Nastêpnej Generacji
 Name:		lincity-ng
-Version:	0.9
-%define	_rel	rc1
-Release:	0.%{_rel}.1
+Version:	1.0
+Release:	1
 License:	GPL v2
 Group:		Applications/Games
-Source0:	http://download.berlios.de/lincity-ng/lincity-ng-0.9rc1.tar.bz2
-# Source0-md5:	e55e0324f872b7a0265ec0814c5d3404
-URL:		http://lincity-ng.berlios.de/
+Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
+# Source0-md5:	606253d145dcf9992ed8eea47e6795f3
+URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
 BuildRequires:	SDL-devel >= 1.2.5
 BuildRequires:	SDL_gfx-devel
 BuildRequires:	SDL_image-devel >= 1.2.3
@@ -44,7 +43,7 @@ zanieczyszczonej, pozbawionej zasobów planety. Ca³e ¿ycie miasta
 znajduje siê w rêkach gracza.
 
 %prep
-%setup -q -n %{name}-%{version}%{_rel}
+%setup -q
 
 %build
 %configure
@@ -60,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README* TODO
+%doc README TODO COPYING-* RELNOTES
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*.pal
@@ -75,6 +74,5 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_datadir}/%{name}/help/de
 %lang(en) %{_datadir}/%{name}/help/en
 %lang(nl) %{_datadir}/%{name}/help/nl
-%{_docdir}/%{name}-%{version}%{_rel}
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
