@@ -8,14 +8,17 @@ Group:		Applications/Games
 Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
 # Source0-md5:	606253d145dcf9992ed8eea47e6795f3
 URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
+BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel >= 1.2.5
 BuildRequires:	SDL_gfx-devel
 BuildRequires:	SDL_image-devel >= 1.2.3
 BuildRequires:	SDL_mixer-devel >= 1.2.4
 BuildRequires:	SDL_ttf-devel >= 2.0
 BuildRequires:	physfs-devel >= 1.0.0
+BuildRequires:	pkgconfig
 BuildRequires:	gettext-devel
 BuildRequires:	jam >= 2.5
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.11
 BuildRequires:	zlib-devel >= 1.0
