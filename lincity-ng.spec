@@ -80,6 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_datadir}/%{name}/help/fr
 %lang(nl) %{_datadir}/%{name}/help/nl
 %lang(sv) %{_datadir}/%{name}/help/sv
+%dir %{_datadir}/%{name}/locale
+%dir %{_datadir}/%{name}/locale/gui
 %lang(ca) %{_datadir}/%{name}/locale/ca.po
 %lang(ca) %{_datadir}/%{name}/locale/gui/ca.po
 %lang(de) %{_datadir}/%{name}/locale/de.po
