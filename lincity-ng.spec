@@ -1,5 +1,5 @@
 Summary:	Lincity - a Next Generation city/country simulation
-Summary(pl):	Lincity - symulator miasta/kraju Nastêpnej Generacji
+Summary(pl.UTF-8):   Lincity - symulator miasta/kraju NastÄ™pnej Generacji
 Name:		lincity-ng
 Version:	1.0.3
 Release:	1
@@ -37,13 +37,13 @@ resource starved planet, it's up to you. Due to the finite resources
 available in any one place, this is not a game that you can leave for
 long periods of time.
 
-%description -l pl
-Trzeba wybudowaæ miasto i nim zarz±dzaæ. Trzeba karmiæ mieszkañców,
-zapewniæ im mieszkanie, pracê i inne dobra. Mo¿na stworzyæ solidn±
-gospodarkê korzystaj±c z odnawialnych ¼róde³ energii i przetwórstwa
-odpadów. Mo¿na te¿ wielkim wysi³kiem zbudowaæ rakiety, aby uciec z
-zanieczyszczonej, pozbawionej zasobów planety. Ca³e ¿ycie miasta
-znajduje siê w rêkach gracza.
+%description -l pl.UTF-8
+Trzeba wybudowaÄ‡ miasto i nim zarzÄ…dzaÄ‡. Trzeba karmiÄ‡ mieszkaÅ„cÃ³w,
+zapewniÄ‡ im mieszkanie, pracÄ™ i inne dobra. MoÅ¼na stworzyÄ‡ solidnÄ…
+gospodarkÄ™ korzystajÄ…c z odnawialnych ÅºrÃ³deÅ‚ energii i przetwÃ³rstwa
+odpadÃ³w. MoÅ¼na teÅ¼ wielkim wysiÅ‚kiem zbudowaÄ‡ rakiety, aby uciec z
+zanieczyszczonej, pozbawionej zasobÃ³w planety. CaÅ‚e Å¼ycie miasta
+znajduje siÄ™ w rÄ™kach gracza.
 
 %prep
 %setup -q
