@@ -2,7 +2,7 @@ Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
 Version:	1.1.0
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Applications/Games
 Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
@@ -29,6 +29,8 @@ Requires:	SDL_image >= 1.2.3
 Requires:	SDL_mixer >= 1.2.4
 Requires:	SDL_ttf >= 2.0.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		filterout	-DNDEBUG
 
 %description
 You are required to build and maintain a city. You must feed, house,
@@ -78,6 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/opening
 %dir %{_datadir}/%{name}/help
 %lang(de) %{_datadir}/%{name}/help/de
+%lang(cs) %{_datadir}/%{name}/help/cs
 %lang(en) %{_datadir}/%{name}/help/en
 %lang(es) %{_datadir}/%{name}/help/es
 %lang(fr) %{_datadir}/%{name}/help/fr
@@ -87,6 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}/locale/gui
 %lang(ca) %{_datadir}/%{name}/locale/ca.po
 %lang(ca) %{_datadir}/%{name}/locale/gui/ca.po
+%lang(cs) %{_datadir}/%{name}/locale/cs.po
+%lang(cs) %{_datadir}/%{name}/locale/gui/cs.po
 %lang(de) %{_datadir}/%{name}/locale/de.po
 %lang(de) %{_datadir}/%{name}/locale/gui/de.po
 %lang(es) %{_datadir}/%{name}/locale/es.po
@@ -95,6 +100,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_datadir}/%{name}/locale/gui/fr.po
 %lang(nl) %{_datadir}/%{name}/locale/nl.po
 %lang(nl) %{_datadir}/%{name}/locale/gui/nl.po
+%lang(pl) %{_datadir}/%{name}/locale/pl.po
+%lang(pl) %{_datadir}/%{name}/locale/gui/pl.po
+%lang(pt) %{_datadir}/%{name}/locale/pt.po
+%lang(pt) %{_datadir}/%{name}/locale/gui/pt.po
 %lang(sv) %{_datadir}/%{name}/locale/sv.po
 %lang(sv) %{_datadir}/%{name}/locale/gui/sv.po
 %{_desktopdir}/*.desktop
