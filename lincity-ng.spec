@@ -1,19 +1,19 @@
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
-Version:	1.0.3
-Release:	1
+Version:	1.1.0
+Release:	0.1
 License:	GPL v2
 Group:		Applications/Games
 Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
-# Source0-md5:	2624857ed9437ac30445884d8593850e
+# Source0-md5:	19010d9800c4b18a7388723d64834512
 URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel >= 1.2.5
-BuildRequires:	SDL_gfx-devel
+BuildRequires:	SDL_gfx-devel >= 2.0.13
 BuildRequires:	SDL_image-devel >= 1.2.3
 BuildRequires:	SDL_mixer-devel >= 1.2.4
-BuildRequires:	SDL_ttf-devel >= 2.0
+BuildRequires:	SDL_ttf-devel >= 2.0.8
 BuildRequires:	physfs-devel >= 1.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	gettext-devel
@@ -21,11 +21,13 @@ BuildRequires:	jam >= 2.5
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.11
+BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel >= 1.0
 Requires:	SDL >= 1.2.5
+Requires:	SDL_gfx >= 2.0.13
 Requires:	SDL_image >= 1.2.3
 Requires:	SDL_mixer >= 1.2.4
-Requires:	SDL_ttf >= 2.0
+Requires:	SDL_ttf >= 2.0.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,6 +49,7 @@ znajduje się w rękach gracza.
 
 %prep
 %setup -q
+%{__sed} 's/ -O3 -g / /' -i Jamrules
 
 %build
 %configure
