@@ -3,10 +3,11 @@ Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
 Version:	1.1.0
 Release:	1
-License:	GPL v2
+License:	GPL v2+
 Group:		Applications/Games
 Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
 # Source0-md5:	19010d9800c4b18a7388723d64834512
+Patch0:		%{name}-desktop.patch
 URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel >= 1.2.5
@@ -51,6 +52,7 @@ znajduje się w rękach gracza.
 
 %prep
 %setup -q
+%patch0 -p1
 %{__sed} 's/ -O3 -g / /' -i Jamrules
 
 %build
