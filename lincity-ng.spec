@@ -1,12 +1,13 @@
+%define	_pre	pre
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
-Version:	1.1.0
-Release:	1
-License:	GPL v2
+Version:	1.1.1
+Release:	0.%{_pre}.1
+License:	GPL v2+
 Group:		Applications/Games
-Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
-# Source0-md5:	19010d9800c4b18a7388723d64834512
+Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}pre.tar.bz2
+# Source0-md5:	577c188f3e5eb632fe991456d5e64786
 URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel >= 1.2.5
@@ -50,7 +51,7 @@ zanieczyszczonej, pozbawionej zasobów planety. Całe życie miasta
 znajduje się w rękach gracza.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}%{_pre}
 %{__sed} 's/ -O3 -g / /' -i Jamrules
 
 %build
@@ -102,8 +103,6 @@ rm -rf $RPM_BUILD_ROOT
 %lang(nl) %{_datadir}/%{name}/locale/gui/nl.po
 %lang(pl) %{_datadir}/%{name}/locale/pl.po
 %lang(pl) %{_datadir}/%{name}/locale/gui/pl.po
-%lang(pt) %{_datadir}/%{name}/locale/pt.po
-%lang(pt) %{_datadir}/%{name}/locale/gui/pt.po
 %lang(sv) %{_datadir}/%{name}/locale/sv.po
 %lang(sv) %{_datadir}/%{name}/locale/gui/sv.po
 %{_desktopdir}/*.desktop
