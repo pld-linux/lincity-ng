@@ -7,7 +7,7 @@
 -Comment=Plan and Build a city and take care of transport, economics, electricityand others.
 +GenericName[pl]=Symulator miasta
 +Comment=Plan and Build a city and take care of transport, economics, electricity and others
-+Comment[pl]=Zaplanuj i zbuduj miasto oraz dbaj o transport, ekonomie, elektryczność i inne rzeczy
++Comment[pl]=Zaplanuj i zbuduj miasto oraz dbaj o transport, ekonomię, elektryczność i inne rzeczy
  Icon=lincity-ng.png
  Exec=lincity-ng
  Terminal=false
