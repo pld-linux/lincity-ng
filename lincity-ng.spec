@@ -1,12 +1,12 @@
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
-Version:	1.1.0
+Version:	1.1.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/Games
-Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
-# Source0-md5:	19010d9800c4b18a7388723d64834512
+Source0:	http://download2.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
+# Source0-md5:	b548b04666aa35e44a83e173a6cbe4b1
 Patch0:		%{name}-desktop.patch
 URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
 BuildRequires:	OpenGL-devel
@@ -87,6 +87,8 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/%{name}/help/es
 %lang(fr) %{_datadir}/%{name}/help/fr
 %lang(nl) %{_datadir}/%{name}/help/nl
+%lang(pt_BR) %{_datadir}/%{name}/help/pt_BR
+%lang(ru) %{_datadir}/%{name}/help/ru
 %lang(sv) %{_datadir}/%{name}/help/sv
 %dir %{_datadir}/%{name}/locale
 %dir %{_datadir}/%{name}/locale/gui
@@ -104,8 +106,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(nl) %{_datadir}/%{name}/locale/gui/nl.po
 %lang(pl) %{_datadir}/%{name}/locale/pl.po
 %lang(pl) %{_datadir}/%{name}/locale/gui/pl.po
-%lang(pt) %{_datadir}/%{name}/locale/pt.po
-%lang(pt) %{_datadir}/%{name}/locale/gui/pt.po
+%lang(pt_BR) %{_datadir}/%{name}/locale/pt_BR.po
+%lang(pt_BR) %{_datadir}/%{name}/locale/gui/pt_BR.po
+%lang(ru) %{_datadir}/%{name}/locale/ru.po
+%lang(ru) %{_datadir}/%{name}/locale/gui/ru.po
 %lang(sv) %{_datadir}/%{name}/locale/sv.po
 %lang(sv) %{_datadir}/%{name}/locale/gui/sv.po
 %{_desktopdir}/*.desktop
