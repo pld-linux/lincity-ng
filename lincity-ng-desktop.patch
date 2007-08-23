@@ -1,5 +1,5 @@
---- lincity-ng-1.1.1pre/lincity-ng.desktop~	2007-07-19 22:14:28.000000000 +0200
-+++ lincity-ng-1.1.1pre/lincity-ng.desktop	2007-08-12 23:11:37.000000000 +0200
+--- lincity-ng-1.1.1/lincity-ng.desktop~	2007-08-22 21:19:28.000000000 +0200
++++ lincity-ng-1.1.1/lincity-ng.desktop	2007-08-22 21:21:48.000000000 +0200
 @@ -5,9 +5,12 @@
  Name=Lincity-NG
  GenericName=City Simulation Game
@@ -12,5 +12,5 @@
  Exec=lincity-ng
  Terminal=false
  StartupNotify=false
- Categories=Application;Game;Simulation;
+ Categories=Game;Simulation;
 +# vi: encoding=utf-8
