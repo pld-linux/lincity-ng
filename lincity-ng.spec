@@ -1,12 +1,13 @@
+%define	_beta	beta
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
-Version:	1.1.2
-Release:	1
+Version:	1.91
+Release:	0.%{_beta}.1
 License:	GPL v2+
 Group:		Applications/Games
-Source0:	http://download2.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
-# Source0-md5:	3b4b67044230bdab64e7976e212cdd80
+Source0:	http://download2.berlios.de/lincity-ng/%{name}-%{version}.%{_beta}.tar.bz2
+# Source0-md5:	c0a6983aefcd394e6a0c0ec58a6f7815
 Patch0:		%{name}-desktop.patch
 URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
 BuildRequires:	OpenGL-devel
@@ -51,7 +52,7 @@ zanieczyszczonej, pozbawionej zasobów planety. Całe życie miasta
 znajduje się w rękach gracza.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}.%{_beta}
 %patch0 -p1
 %{__sed} 's/ -O3 -g / /' -i Jamrules
 
