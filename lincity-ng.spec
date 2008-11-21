@@ -82,15 +82,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/music
 %{_datadir}/%{name}/opening
 %dir %{_datadir}/%{name}/help
-%lang(de) %{_datadir}/%{name}/help/de
 %lang(cs) %{_datadir}/%{name}/help/cs
+%lang(de) %{_datadir}/%{name}/help/de
 %lang(en) %{_datadir}/%{name}/help/en
 %lang(es) %{_datadir}/%{name}/help/es
 %lang(fr) %{_datadir}/%{name}/help/fr
+%lang(gl) %{_datadir}/%{name}/help/gl
 %lang(nl) %{_datadir}/%{name}/help/nl
 %lang(pt_BR) %{_datadir}/%{name}/help/pt_BR
 %lang(ru) %{_datadir}/%{name}/help/ru
 %lang(sv) %{_datadir}/%{name}/help/sv
+%lang(tr) %{_datadir}/%{name}/help/tr
 %dir %{_datadir}/%{name}/locale
 %dir %{_datadir}/%{name}/locale/gui
 %lang(ca) %{_datadir}/%{name}/locale/ca.po
