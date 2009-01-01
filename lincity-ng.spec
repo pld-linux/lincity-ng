@@ -1,28 +1,28 @@
-%define	_beta	beta
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
-Version:	1.92
-Release:	0.%{_beta}.1
+Version:	1.97
+Release:	0.beta.1
 License:	GPL v2+
 Group:		Applications/Games
-Source0:	http://download2.berlios.de/lincity-ng/%{name}-%{version}.%{_beta}.tar.bz2
-# Source0-md5:	ef8434c1902352d864420e7b4962f06b
+Source0:	http://download2.berlios.de/lincity-ng/%{name}-%{version}.beta.tar.bz2
+# Source0-md5:	04218b695055beaa3f969477a716f34f
 Patch0:		%{name}-desktop.patch
 URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel >= 1.2.5
 BuildRequires:	SDL_gfx-devel >= 2.0.13
 BuildRequires:	SDL_image-devel >= 1.2.3
 BuildRequires:	SDL_mixer-devel >= 1.2.4
 BuildRequires:	SDL_ttf-devel >= 2.0.8
-BuildRequires:	physfs-devel >= 1.0.0
-BuildRequires:	pkgconfig
 BuildRequires:	gettext-devel
 BuildRequires:	jam >= 2.5
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.11
+BuildRequires:	physfs-devel >= 1.0.0
+BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel >= 1.0
 Requires:	SDL >= 1.2.5
@@ -44,26 +44,26 @@ available in any one place, this is not a game that you can leave for
 long periods of time.
 
 %description -l pl.UTF-8
-Trzeba wybudować miasto i nim zarządzać. Trzeba karmić mieszkańców,
-zapewnić im mieszkanie, pracę i inne dobra. Można stworzyć solidną
-gospodarkę korzystając z odnawialnych źródeł energii i przetwórstwa
-odpadów. Można też wielkim wysiłkiem zbudować rakiety, aby uciec z
-zanieczyszczonej, pozbawionej zasobów planety. Całe życie miasta
-znajduje się w rękach gracza.
+Trzeba wybudować miasto i nim zarządzać. Trzeba karmić
+mieszkańców, zapewnić im mieszkanie, pracę i inne dobra. Można
+stworzyć solidną gospodarkę korzystając z odnawialnych źródeł
+energii i przetwórstwa odpadów. Można też wielkim wysiłkiem
+zbudować rakiety, aby uciec z zanieczyszczonej, pozbawionej zasobów
+planety. Całe życie miasta znajduje się w rękach gracza.
 
 %prep
-%setup -q -n %{name}-%{version}.%{_beta}
+%setup -q -n %{name}-%{version}.beta
 %patch0 -p1
 %{__sed} 's/ -O3 -g / /' -i Jamrules
 
 %build
 %configure
-/usr/bin/jam
+jam
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-/usr/bin/jam -s DESTDIR=$RPM_BUILD_ROOT install 
+jam -s DESTDIR=$RPM_BUILD_ROOT install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
