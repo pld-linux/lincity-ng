@@ -2,7 +2,7 @@ Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
 Version:	1.1.2
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications/Games
 Source0:	http://download2.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
@@ -15,15 +15,17 @@ BuildRequires:	SDL_gfx-devel >= 2.0.13
 BuildRequires:	SDL_image-devel >= 1.2.3
 BuildRequires:	SDL_mixer-devel >= 1.2.4
 BuildRequires:	SDL_ttf-devel >= 2.0.8
-BuildRequires:	physfs-devel >= 1.0.0
-BuildRequires:	pkgconfig
 BuildRequires:	gettext-devel
 BuildRequires:	jam >= 2.5
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.11
+BuildRequires:	physfs-devel >= 1.0.0
+BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel >= 1.0
+# needs jam from jam.spec
+BuildConflicts:	boost-jam
 Requires:	SDL >= 1.2.5
 Requires:	SDL_gfx >= 2.0.13
 Requires:	SDL_image >= 1.2.3
