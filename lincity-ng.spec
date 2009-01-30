@@ -1,14 +1,15 @@
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
-Version:	1.1.2
-Release:	3
+Version:	2.0
+Release:	1
 License:	GPL v2+
 Group:		Applications/Games
-Source0:	http://download2.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
-# Source0-md5:	3b4b67044230bdab64e7976e212cdd80
+Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
+# Source0-md5:	1bd0f58e0f2b131d70044f4230600ed1
 Patch0:		%{name}-desktop.patch
 URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel >= 1.2.5
 BuildRequires:	SDL_gfx-devel >= 2.0.13
@@ -45,12 +46,12 @@ available in any one place, this is not a game that you can leave for
 long periods of time.
 
 %description -l pl.UTF-8
-Trzeba wybudować miasto i nim zarządzać. Trzeba karmić mieszkańców,
-zapewnić im mieszkanie, pracę i inne dobra. Można stworzyć solidną
-gospodarkę korzystając z odnawialnych źródeł energii i przetwórstwa
-odpadów. Można też wielkim wysiłkiem zbudować rakiety, aby uciec z
-zanieczyszczonej, pozbawionej zasobów planety. Całe życie miasta
-znajduje się w rękach gracza.
+Trzeba wybudować miasto i nim zarządzać. Trzeba karmić
+mieszkańców, zapewnić im mieszkanie, pracę i inne dobra. Można
+stworzyć solidną gospodarkę korzystając z odnawialnych źródeł
+energii i przetwórstwa odpadów. Można też wielkim wysiłkiem
+zbudować rakiety, aby uciec z zanieczyszczonej, pozbawionej zasobów
+planety. Całe życie miasta znajduje się w rękach gracza.
 
 %prep
 %setup -q
@@ -59,19 +60,19 @@ znajduje się w rękach gracza.
 
 %build
 %configure
-/usr/bin/jam
+jam
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-/usr/bin/jam -s DESTDIR=$RPM_BUILD_ROOT install 
+jam -s DESTDIR=$RPM_BUILD_ROOT install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README TODO COPYING-* RELNOTES
+%doc COPYING-* CREDITS README TODO RELNOTES
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*.pal
@@ -83,27 +84,35 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/music
 %{_datadir}/%{name}/opening
 %dir %{_datadir}/%{name}/help
+%lang(cs) %{_datadir}/%{name}/help/ca
+%lang(ca) %{_datadir}/%{name}/help/cs
 %lang(de) %{_datadir}/%{name}/help/de
-%lang(cs) %{_datadir}/%{name}/help/cs
 %lang(en) %{_datadir}/%{name}/help/en
 %lang(es) %{_datadir}/%{name}/help/es
 %lang(fr) %{_datadir}/%{name}/help/fr
+%lang(gl) %{_datadir}/%{name}/help/gl
 %lang(nl) %{_datadir}/%{name}/help/nl
 %lang(pt_BR) %{_datadir}/%{name}/help/pt_BR
 %lang(ru) %{_datadir}/%{name}/help/ru
 %lang(sv) %{_datadir}/%{name}/help/sv
+%lang(tr) %{_datadir}/%{name}/help/tr
 %dir %{_datadir}/%{name}/locale
 %dir %{_datadir}/%{name}/locale/gui
 %lang(ca) %{_datadir}/%{name}/locale/ca.po
 %lang(ca) %{_datadir}/%{name}/locale/gui/ca.po
 %lang(cs) %{_datadir}/%{name}/locale/cs.po
 %lang(cs) %{_datadir}/%{name}/locale/gui/cs.po
+%lang(da) %{_datadir}/%{name}/locale/da.po
 %lang(de) %{_datadir}/%{name}/locale/de.po
 %lang(de) %{_datadir}/%{name}/locale/gui/de.po
 %lang(es) %{_datadir}/%{name}/locale/es.po
 %lang(es) %{_datadir}/%{name}/locale/gui/es.po
 %lang(fr) %{_datadir}/%{name}/locale/fr.po
 %lang(fr) %{_datadir}/%{name}/locale/gui/fr.po
+%lang(gl) %{_datadir}/%{name}/locale/gl.po
+%lang(gl) %{_datadir}/%{name}/locale/gui/gl.po
+%lang(ja) %{_datadir}/%{name}/locale/ja.po
+%lang(ja) %{_datadir}/%{name}/locale/gui/ja.po
 %lang(nl) %{_datadir}/%{name}/locale/nl.po
 %lang(nl) %{_datadir}/%{name}/locale/gui/nl.po
 %lang(pl) %{_datadir}/%{name}/locale/pl.po
@@ -114,5 +123,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ru) %{_datadir}/%{name}/locale/gui/ru.po
 %lang(sv) %{_datadir}/%{name}/locale/sv.po
 %lang(sv) %{_datadir}/%{name}/locale/gui/sv.po
+%lang(tr) %{_datadir}/%{name}/locale/tr.po
+%lang(tr) %{_datadir}/%{name}/locale/gui/tr.po
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
