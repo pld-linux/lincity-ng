@@ -84,8 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/music
 %{_datadir}/%{name}/opening
 %dir %{_datadir}/%{name}/help
-%lang(cs) %{_datadir}/%{name}/help/ca
-%lang(ca) %{_datadir}/%{name}/help/cs
+%lang(ca) %{_datadir}/%{name}/help/ca
+%lang(cs) %{_datadir}/%{name}/help/cs
 %lang(de) %{_datadir}/%{name}/help/de
 %lang(en) %{_datadir}/%{name}/help/en
 %lang(es) %{_datadir}/%{name}/help/es
