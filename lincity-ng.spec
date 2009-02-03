@@ -46,12 +46,12 @@ available in any one place, this is not a game that you can leave for
 long periods of time.
 
 %description -l pl.UTF-8
-Trzeba wybudować miasto i nim zarządzać. Trzeba karmić
-mieszkańców, zapewnić im mieszkanie, pracę i inne dobra. Można
-stworzyć solidną gospodarkę korzystając z odnawialnych źródeł
-energii i przetwórstwa odpadów. Można też wielkim wysiłkiem
-zbudować rakiety, aby uciec z zanieczyszczonej, pozbawionej zasobów
-planety. Całe życie miasta znajduje się w rękach gracza.
+Trzeba wybudować miasto i nim zarządzać. Trzeba karmić mieszkańców,
+zapewnić im mieszkanie, pracę i inne dobra. Można stworzyć solidną
+gospodarkę korzystając z odnawialnych źródeł energii i przetwórstwa
+odpadów. Można też wielkim wysiłkiem zbudować rakiety, aby uciec z
+zanieczyszczonej, pozbawionej zasobów planety. Całe życie miasta
+znajduje się w rękach gracza.
 
 %prep
 %setup -q
