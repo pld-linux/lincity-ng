@@ -4,7 +4,7 @@ Name:		lincity-ng
 Version:	2.0
 Release:	1
 License:	GPL v2+
-Group:		Applications/Games
+Group:		X11/Applications/Games
 Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
 # Source0-md5:	1bd0f58e0f2b131d70044f4230600ed1
 Patch0:		%{name}-desktop.patch
