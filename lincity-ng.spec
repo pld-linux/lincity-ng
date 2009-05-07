@@ -2,7 +2,7 @@ Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
 Version:	2.0
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
