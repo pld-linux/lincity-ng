@@ -16,7 +16,7 @@ BuildRequires:	SDL_gfx-devel >= 2.0.13
 BuildRequires:	SDL_image-devel >= 1.2.3
 BuildRequires:	SDL_mixer-devel >= 1.2.4
 BuildRequires:	SDL_ttf-devel >= 2.0.8
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	jam >= 2.5
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
