@@ -2,12 +2,13 @@ Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
 Version:	2.0
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://download.berlios.de/lincity-ng/%{name}-%{version}.tar.bz2
 # Source0-md5:	1bd0f58e0f2b131d70044f4230600ed1
 Patch0:		%{name}-desktop.patch
+Patch1:		format-security.patch
 URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -56,6 +57,7 @@ znajduje się w rękach gracza.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 %{__sed} 's/ -O3 -g / /' -i Jamrules
 
 %build
@@ -66,6 +68,8 @@ jam
 rm -rf $RPM_BUILD_ROOT
 
 jam -s DESTDIR=$RPM_BUILD_ROOT install
+
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
