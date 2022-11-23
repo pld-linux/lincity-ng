@@ -4,7 +4,7 @@ Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 %define		git_commit_date		20211121
 Name:		lincity-ng
 Version:	2.9.beta.%{git_commit_date}
-Release:	0.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	https://github.com/lincity-ng/lincity-ng/archive/%{git_commit}/%{name}-%{version}.tar.gz
