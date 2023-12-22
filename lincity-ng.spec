@@ -1,14 +1,12 @@
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
-%define		git_commit	b9062bec252632ca5d26b98d71453b8762c63173
-%define		git_commit_date		20211121
 Name:		lincity-ng
-Version:	2.9.beta.%{git_commit_date}
+Version:	2.9.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	https://github.com/lincity-ng/lincity-ng/archive/%{git_commit}/%{name}-%{version}.tar.gz
-# Source0-md5:	9264a82a5ef770c249298b09445baf76
+Source0:	https://github.com/lincity-ng/lincity-ng/archive/refs/tags/%{name}-%{version}.tar.gz
+# Source0-md5:	8a8a487210eecc5a1b71398c2ff90b6d
 Patch0:		%{name}-desktop.patch
 Patch1:		format-security.patch
 URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
@@ -57,7 +55,7 @@ zanieczyszczonej, pozbawionej zasobów planety. Całe życie miasta
 znajduje się w rękach gracza.
 
 %prep
-%setup -q -n %{name}-%{git_commit}
+%setup -q -n %{name}-%{name}-%{version}
 %patch0 -p1
 %patch1 -p1
 %{__sed} 's/ -O3 -g / /' -i Jamrules
@@ -73,9 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 
 jam -s DESTDIR=$RPM_BUILD_ROOT install
 
-#%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
-# temporaty solution until the full version is released
-%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-2.9.beta
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
