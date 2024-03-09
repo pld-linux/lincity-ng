@@ -1,14 +1,15 @@
---- lincity-ng-b9062bec252632ca5d26b98d71453b8762c63173/lincity-ng.desktop~	2021-11-25 16:42:03.000000000 +0000
-+++ lincity-ng-b9062bec252632ca5d26b98d71453b8762c63173/lincity-ng.desktop	2022-11-23 15:04:10.143953590 +0000
-@@ -4,10 +4,12 @@
- Name=Lincity-NG
+--- lincity-ng-lincity-ng-2.10.0/data/lincity-ng.desktop~	2024-03-09 03:30:37.000000000 +0000
++++ lincity-ng-lincity-ng-2.10.0/data/lincity-ng.desktop	2024-03-09 10:52:39.823340396 +0000
+@@ -5,11 +5,13 @@
  GenericName=City Simulation Game
  GenericName[de]=Stadtsimulationsspiel
+ GenericName[gd]=Geama samhlachadh baile
 +GenericName[pl]=Symulator miasta
  GenericName[ru]=Градостроительный симулятор
  GenericName[tr]=Şehir Simulasyon Oyunu
  Comment=Plan and build a city and take care of transport, economics, electricity and others.
  Comment[de]=Plane und baue eine Stadt und kümmere dich um das Verkehrswesen, die Wirtschaft, Elektrizität und mehr.
+ Comment[gd]=Planaig is tog baile agus stiùirich an còmhdhail, an eaconamaidh, na seirbheisean dealain is a bharrachd.
 +Comment[pl]=Zaplanuj i zbuduj miasto oraz dbaj o transport, ekonomię, elektryczność i inne rzeczy
  Comment[ru]=Стройте и развивайте город, его экономику, транспорт, инфраструктуру и т.д.
  Comment[tr]=Bir şehir planlayın, inşa edin ve ulaşım, ekonomi, elektrik ve diğer ihtiyaçları ile ilgilenin.

@@ -1,15 +1,14 @@
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
-Version:	2.9.0
+Version:	2.10.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	https://github.com/lincity-ng/lincity-ng/archive/refs/tags/%{name}-%{version}.tar.gz
-# Source0-md5:	8a8a487210eecc5a1b71398c2ff90b6d
+# Source0-md5:	414a9a69043e2538fd904846c1847282
 Patch0:		%{name}-desktop.patch
-Patch1:		format-security.patch
-URL:		http://lincity-ng.berlios.de/wiki/index.php/Main_Page
+URL:		https://www.berlios.de/software/lincity-ng
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL2-devel >= 2.0.0
@@ -17,25 +16,22 @@ BuildRequires:	SDL2_gfx-devel >= 1.0.0
 BuildRequires:	SDL2_image-devel >= 2.0.0
 BuildRequires:	SDL2_mixer-devel >= 2.0.0
 BuildRequires:	SDL2_ttf-devel >= 2.0.12
+BuildRequires:	cmake
 BuildRequires:	gettext-tools
-BuildRequires:	jam >= 2.5
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.11
+BuildRequires:	libxslt-devel
 BuildRequires:	physfs-devel >= 1.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel >= 1.0
-# needs jam from jam.spec
-BuildConflicts:	boost-jam
 Requires:	SDL2 >= 2.0.0
 Requires:	SDL2_gfx >= 1.0.0
 Requires:	SDL2_image >= 2.0.0
 Requires:	SDL2_mixer >= 2.0.0
 Requires:	SDL2_ttf >= 2.0.12
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		filterout	-DNDEBUG
 
 %description
 You are required to build and maintain a city. You must feed, house,
@@ -54,31 +50,46 @@ odpadów. Można też wielkim wysiłkiem zbudować rakiety, aby uciec z
 zanieczyszczonej, pozbawionej zasobów planety. Całe życie miasta
 znajduje się w rękach gracza.
 
+%post
+%update_desktop_database
+%update_icon_cache hicolor
+
+%postun
+%update_desktop_database
+%update_icon_cache hicolor
+
 %prep
 %setup -q -n %{name}-%{name}-%{version}
 %patch0 -p1
-%patch1 -p1
-%{__sed} 's/ -O3 -g / /' -i Jamrules
-%{__sed} -i 's/CREDITS\ //g' Jamfile
 
 %build
-sh autogen.sh
-%configure
-jam
+mkdir build
+cd build
+touch README.md
+cmake .. \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+	-DCMAKE_INSTALL_PREFIX=%{_prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-jam -s DESTDIR=$RPM_BUILD_ROOT install
+cd build
+%{__make} install \
+        DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+# these go to doc
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/lincity-ng/{COPYING,COPYING-*,README.md,RELNOTES}
+# not needed copy
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/lincity-ng/{lincity-ng.desktop,lincity-ng.png}
+
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING-* README TODO RELNOTES
+%doc COPYING COPYING-* RELNOTES README.md doc/{README-*,TODO,lincityconfig.xml,translation.md,units,userconfig.xml}
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*.pal
@@ -105,7 +116,9 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sv) %{_datadir}/%{name}/help/sv
 %lang(tr) %{_datadir}/%{name}/help/tr
 %dir %{_datadir}/%{name}/locale
+%{_datadir}/lincity-ng/locale/messages.pot
 %dir %{_datadir}/%{name}/locale/gui
+%{_datadir}/lincity-ng/locale/gui/messages.pot
 %lang(ca) %{_datadir}/%{name}/locale/ca.po
 %lang(ca) %{_datadir}/%{name}/locale/gui/ca.po
 %lang(cs) %{_datadir}/%{name}/locale/cs.po
@@ -140,4 +153,5 @@ rm -rf $RPM_BUILD_ROOT
 %lang(zh_CN) %{_datadir}/%{name}/locale/zh_CN.po
 %lang(zh_CN) %{_datadir}/%{name}/locale/gui/zh_CN.po
 %{_desktopdir}/*.desktop
-%{_pixmapsdir}/*
+%{_iconsdir}/hicolor/128x128/apps/lincity-ng.png
+%{_mandir}/lincity-ng.6*
