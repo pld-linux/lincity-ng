@@ -1,12 +1,12 @@
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
-Version:	2.10.2
+Version:	2.11.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	https://github.com/lincity-ng/lincity-ng/archive/refs/tags/%{name}-%{version}.tar.gz
-# Source0-md5:	83a07f22a93c5113c971ae0dcb237650
+# Source0-md5:	3d2879ffd317cfe7b028a6ac28e6c8ff
 Patch0:		%{name}-desktop.patch
 URL:		https://www.berlios.de/software/lincity-ng
 BuildRequires:	OpenGL-GLU-devel
@@ -78,7 +78,7 @@ cd build
         DESTDIR=$RPM_BUILD_ROOT
 
 # these go to doc
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/lincity-ng/{COPYING,COPYING-*,README.md,RELNOTES}
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/lincity-ng/{CHANGELOG.md,COPYING,COPYING-*,README.md}
 # not needed copy
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/lincity-ng/{lincity-ng.desktop,lincity-ng.png}
 
@@ -89,7 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING COPYING-* RELNOTES README.md doc/{README-*,TODO,lincityconfig.xml,translation.md,units,userconfig.xml}
+%doc CHANGELOG.md COPYING COPYING-* README.md doc/{README-*,TODO,lincityconfig.xml,translation.md,units,userconfig.xml}
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*.pal
@@ -116,9 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sv) %{_datadir}/%{name}/help/sv
 %lang(tr) %{_datadir}/%{name}/help/tr
 %dir %{_datadir}/%{name}/locale
-%{_datadir}/lincity-ng/locale/messages.pot
 %dir %{_datadir}/%{name}/locale/gui
-%{_datadir}/lincity-ng/locale/gui/messages.pot
 %lang(ca) %{_datadir}/%{name}/locale/ca.po
 %lang(ca) %{_datadir}/%{name}/locale/gui/ca.po
 %lang(cs) %{_datadir}/%{name}/locale/cs.po
