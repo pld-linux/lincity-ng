@@ -1,12 +1,12 @@
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
-Version:	2.11.2
+Version:	2.12.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	https://github.com/lincity-ng/lincity-ng/archive/refs/tags/%{name}-%{version}.tar.gz
-# Source0-md5:	b069a607c4d36ca6227bd77ea12cd7b7
+# Source0-md5:	b4741c0739b6d414ae862c31a7cc98d1
 Patch0:		%{name}-desktop.patch
 URL:		https://www.berlios.de/software/lincity-ng
 BuildRequires:	OpenGL-GLU-devel
@@ -77,11 +77,6 @@ cd build
 %{__make} install \
         DESTDIR=$RPM_BUILD_ROOT
 
-# these go to doc
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/lincity-ng/{CHANGELOG.md,COPYING,COPYING-*,README.md}
-# not needed copy
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/lincity-ng/{lincity-ng.desktop,lincity-ng.png}
-
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}
 
 %clean
@@ -92,7 +87,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGELOG.md COPYING COPYING-* README.md doc/{README-*,TODO,lincityconfig.xml,translation.md,units,userconfig.xml}
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*.pal
 %{_datadir}/%{name}/*.xml
 %{_datadir}/%{name}/fonts
 %{_datadir}/%{name}/images
