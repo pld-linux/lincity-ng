@@ -1,33 +1,31 @@
 Summary:	Lincity - a Next Generation city/country simulation
 Summary(pl.UTF-8):	Lincity - symulator miasta/kraju Następnej Generacji
 Name:		lincity-ng
-Version:	2.13.1
+Version:	2.14.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	https://github.com/lincity-ng/lincity-ng/archive/refs/tags/%{name}-%{version}.tar.gz
-# Source0-md5:	77d0b976dabaa7e5f876ac76632fde6e
+# Source0-md5:	71dc6d6c20367b98736d6d1c47018d65
 Patch0:		%{name}-desktop.patch
 URL:		https://www.berlios.de/software/lincity-ng
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
-BuildRequires:	SDL2-devel >= 2.0.0
-BuildRequires:	SDL2_gfx-devel >= 1.0.0
+BuildRequires:	SDL2-devel >= 2.0.18
 BuildRequires:	SDL2_image-devel >= 2.0.0
 BuildRequires:	SDL2_mixer-devel >= 2.0.0
 BuildRequires:	SDL2_ttf-devel >= 2.0.12
 BuildRequires:	cmake
 BuildRequires:	gettext-tools
+BuildRequires:	libfmt-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.11
 BuildRequires:	libxslt-devel
-BuildRequires:	physfs-devel >= 1.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel >= 1.0
-Requires:	SDL2 >= 2.0.0
-Requires:	SDL2_gfx >= 1.0.0
+Requires:	SDL2 >= 2.0.18
 Requires:	SDL2_image >= 2.0.0
 Requires:	SDL2_mixer >= 2.0.0
 Requires:	SDL2_ttf >= 2.0.12
